@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* Styles pour le menu mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px 0;
+        text-align: center;
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        font-size: 24px;
+    }
+    
+    nav {
+        position: relative;
+    }
+}
+
+/* Animations pour les cartes de service */
+.service-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animations pour la section héros */
+.hero-text, .hero-img {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.hero-text {
+    transform: translateX(-30px);
+}
+
+.hero-img {
+    transform: translateX(30px);
+}
+
+.hero-text.animated, .hero-img.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+:root {
+    --primary: #22223b;
+    --secondary: #4a4e69;
+    --accent: #f2e9e4;
+    --highlight: #fca311;
+    --text: #fff;
+    --muted: #bfc0c0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-image: url('./img/bgy.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+    min-height: 100vh;
+    min-width: 100vh;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--secondary);
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--highlight);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover {
+    color: var(--highlight);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: var(--text);
+    cursor: pointer;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--secondary);
+    border-radius: 24px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--highlight);
+    margin-bottom: 0.5rem;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.desc {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+}
+
+.services {
+    margin-bottom: 1.5rem;
+}
+
+.services span {
+    color: var(--highlight);
+    font-weight: 600;
+}
+
+.services p {
+    color: var(--text);
+    margin: 0.2rem 0 0.5rem 0;
+}
+
+.more-link {
+    color: var(--highlight);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.socials {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.socials img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.2s;
+}
+
+.socials img:hover {
+    filter: brightness(0) invert(0.7) sepia(1) hue-rotate(50deg);
+}
+
+.hero-img {
+    flex: 0 0 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid var(--primary);
+    background: var(--primary);
+}
+
+.features {
+    background: var(--secondary);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.stats div {
+    background: var(--primary);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    flex: 1 1 120px;
+    font-size: 1.1rem;
+    color: var(--muted);
+}
+
+.stats span {
+    color: var(--highlight);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.services-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: var(--primary);
+    border-radius: 16px;
+    padding: 1.5rem;
+    flex: 1 1 250px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.service-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 1rem;
+    filter: brightness(0) invert(1);
+}
+
+.service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--highlight);
+}
+
+.service-card p {
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.service-card a {
+    color: var(--highlight);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .hero-img {
+        margin-top: 1.5rem;
+        align-self: center;
+    }
+    .stats, .services-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+    .hero, .features {
+        padding: 1rem;
+    }
+}
